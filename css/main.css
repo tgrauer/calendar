@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500i,600,800);
+applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, eal, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, caption, img, header, container {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #595C63;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  min-height: 75px;
+}
+
+.navbar-default {
+  background: #203047;
+  border: 1px solid #0d131d;
+}
+
+.navbar-right .btn.btn-default {
+  margin-bottom: 0;
+  margin-top: 21px;
+}
+
+.navbar-brand img {
+  max-width: 210px;
+  position: relative;
+  bottom: 10px;
+  margin-top: 0;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+form#add_event .form-control {
+  margin-bottom: 15px !important;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.help-block {
+  font-size: 11px;
+  color: #666;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.box {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border: 1px solid #d5d5d5;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.11);
+  margin-bottom: 3.0%;
+  margin-top: 30px;
+}
+
+.modal-body {
+  white-space: pre-wrap !important;
+}
+
+.box:before, .box:after {
+  content: "";
+  display: table;
+}
+
+.box:after {
+  clear: both;
+}
+
+.box .header {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  position: relative;
+  background: #595C63;
+}
+
+.box .header h4 {
+  position: relative;
+  padding: 9px 0;
+  padding-top: 8px;
+  padding-left: 10px;
+  border-bottom: 1px solid #c2c2c2;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 20px;
+}
+
+.box .content {
+  padding: 0;
+  margin: 0;
+}
+
+.content.pad {
+  padding: 20px;
+}
+
+.box .content:before, .box .content:after {
+  content: "";
+  display: table;
+}
+
+.box .content:after {
+  clear: both;
+}
+
+/* timepicker */
+.bootstrap-timepicker.dropdown-menu {
+  border-radius: 4px 4px 4px 4px;
+  display: none;
+  left: 0;
+  margin-top: 1px;
+  padding: 4px;
+  top: 0;
+}
+
+.bootstrap-timepicker.dropdown-menu.open {
+  display: inline-block;
+}
+
+.bootstrap-timepicker.dropdown-menu:before {
+  border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  content: "";
+  left: 6px;
+  position: absolute;
+  top: -7px;
+}
+
+.bootstrap-timepicker.dropdown-menu:after {
+  border-bottom: 6px solid #FFFFFF;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  content: "";
+  left: 7px;
+  position: absolute;
+  top: -6px;
+}
+
+.bootstrap-timepicker.modal {
+  margin-left: -100px;
+  margin-top: 0;
+  top: 30%;
+  width: 200px;
+}
+
+.bootstrap-timepicker.modal .modal-content {
+  padding: 0;
+}
+
+.bootstrap-timepicker table {
+  margin: 0;
+  width: 100%;
+}
+
+.bootstrap-timepicker td, .bootstrap-timepicker th {
+  border-radius: 4px 4px 4px 4px;
+  height: 20px;
+  text-align: center;
+}
+
+.bootstrap-timepicker td.separator {
+  width: 1px;
+}
+
+.bootstrap-timepicker td a {
+  border: 1px solid transparent;
+  display: block;
+  margin: 4px;
+  padding: 4px 0;
+}
+
+.bootstrap-timepicker td a:hover {
+  background-color: #EEEEEE;
+  border-color: #DDDDDD;
+  border-radius: 4px 4px 4px 4px;
+}
+
+a.fc-event:hover {
+  color: #eee;
+  background: #444 !important;
+  border: 1px solid #000 !important;
+}
+
+.fc-header {
+  background: #203047;
+  color: #fff;
+}
+
+.fc-border-separate tr.fc-last th, .fc-border-separate tr.fc-last td {
+  background: #ddd;
+}
+
+.btn.btn-default, .btn.btn-primary {
+  position: relative;
+  z-index: 9999;
+  margin-top: 6px;
+  margin-bottom: 30px;
+  background-color: #df511e;
+  background-image: -webkit-linear-gradient(top, #f2ad4d, #df511e);
+  background-image: -moz-linear-gradient(top, #f2ad4d, #df511e);
+  background-image: -o-linear-gradient(top, #f2ad4d, #df511e);
+  background-image: -ms-linear-gradient(top, #f2ad4d, #df511e);
+  background-image: linear-gradient(to bottom, #f2ad4d, #df511e);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#f2ad4d', EndColorStr='#df511e');
+  border: none;
+  color: #fff;
+  -moz-transition: all, ease, 0.2s;
+  -o-transition: all, ease, 0.2s;
+  -webkit-transition: all, ease, 0.2s;
+  transition: all, ease, 0.2s;
+  font-weight: 600;
+}
+.btn.btn-default:hover, .btn.btn-primary:hover {
+  background-color: #c9491b;
+  background-image: -webkit-linear-gradient(top, #f0a235, #c9491b);
+  background-image: -moz-linear-gradient(top, #f0a235, #c9491b);
+  background-image: -o-linear-gradient(top, #f0a235, #c9491b);
+  background-image: -ms-linear-gradient(top, #f0a235, #c9491b);
+  background-image: linear-gradient(to bottom, #f0a235, #c9491b);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='darken(#f2ad4d, 5%)', EndColorStr='darken(#df511e, 5%)');
+}
+
+.form-group input, .form-group select {
+  height: 40px;
+  background: #f3f3f3;
+}
+.form-group textarea {
+  background: #f3f3f3;
+}

@@ -265,7 +265,7 @@
 
 			// The update query
 			$query = "UPDATE calendar SET title = '$title', description = '$description', url='$url', start = '$start', end = '$end' WHERE id = '$id'";
-			
+
 			// The result
 			return $this->result = mysqli_query($this->connection, $query);
 		}
@@ -456,6 +456,16 @@ END:VCALENDAR';
 				return false;	
 			}
 				
+		}
+
+		public function login($username, $password){
+			$username = mysqli_real_escape_string($this->connection, $username);
+			$password = mysqli_real_escape_string($this->connection, $password);
+
+			$login = mysqli_query($this->connection, "SELECT * FROM users WHERE username ='$username' AND password = '$password'");
+
+			return $login;
+			
 		}
 				
 	}

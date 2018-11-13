@@ -4,6 +4,42 @@
   
     include ('includes/loader.php');
 
+    $errors = [];
+
+    if(isset($_POST['login'])){
+
+        if(!empty($_POST['username'])){
+            $username = strtolower($_POST['username']);
+        }else{
+            $error ="Please enter a username";
+            array_push($errors, $error);
+        }
+
+        if(!empty($_POST['password'])){
+            $password = strtolower($_POST['password']);
+        }else{
+            $error ="Please enter a password";
+            array_push($errors, $error);
+        }
+
+        if(empty($errors)){
+            $login = $calendar->login($username, $password);
+            $check_login = mysqli_num_rows($login);
+
+            if($check_login){
+                session_start();
+                $row = mysqli_fetch_array($login);
+
+                $_SESSION['user']= $row['username'];
+                $_SESSION['type']= $row['type'];
+                header("Location: calendar.php");
+            }else{
+                $error = "Invalid Login";
+                array_push($errors, $error);
+            }
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -35,37 +71,59 @@
     <header>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container navcontainer">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php"><img class="img-responsive logo" src="img/chase_logo_blue.png" alt=""></a>
-                </div>
-
-                <div class="navbar-right">
-                    <a href="add_event.php" class="btn btn-default pull-right add_btn">Add Event</a>
+                <div class="navbar-header home">
+                    <a class="navbar-brand" href="#"><img class="img-responsive logo" src="img/chase_logo_blue.png" alt=""></a>
                 </div>
             </div>
         </nav>
     </header>
 
     <div class="container">      
-       
-      <div class="clearfix"></div>
-        
-      <div class="box">
-        <div class="header"><h4>C</h4></div>
-        <div class="content"> 
-            <div id="calendar"></div>
-        </div> 
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="form-holder">
+                    <h4>Login</h4>
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="form">
+                        
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="username" value="<?php if(isset($username)){echo $username;}?>">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <input type="submit" class="btn btn-primary btn-lg" value="Login" name="login">
+                        
+                        <?php 
+                            if(!empty($errors)){
+                                echo '<div class="alert alert-danger">';
+                                foreach ($errors as $e) {
+                                    echo '<p>'.$e.'</p>';
+                                }
+                                echo '</div>';
+                            }
+                        ?>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+      
     </div>
     
-    <?php 
-		if(isset($_GET['page'])) 
-		{
-			header('location: view.php?page='.$_GET['page']);
-			exit();
-	   	} 
-   	?>
-
-    </div> <!-- /container -->
 
     <!-- javascript
     ================================================== -->
@@ -84,13 +142,5 @@
     <script src="lib/validation/jquery.validationEngine-en.js"></script>
     <script src="js/custom.js"></script>
     
-    <script type="text/javascript">
-		$().FullCalendarExt({ 
-            version: 'php',
-            calendarSelector: '#calendar',
-            defaultColor:'#00c2ff'
-        });
-	</script>
-
   </body>
 </html>

@@ -84,9 +84,9 @@
 				
 				quickSaveCategory: '',
 				
-				savedRedirect: 'index.php',
-				removedRedirect: 'index.php',
-				updatedRedirect: 'index.php'  
+				savedRedirect: 'calendar.php',
+				removedRedirect: 'calendar.php',
+				updatedRedirect: 'calendar.php'  
             }
 
 			var options =  $.extend(defaults, options);

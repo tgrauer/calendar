@@ -1,17 +1,16 @@
 <?php 
-    
+
+    ob_start(); 
     session_start();
+
     if(!isset($_SESSION['user'])){
         header("Location: index.php");
         die();
     }
-    include('includes/loader.php'); 
+    
+    include ('includes/loader.php');
 
-    $info = $calendar->retrieve($_GET['page']);
-    // echo '<pre>';
-    // print_r($info);
-    // echo '</pre>';
-
+    print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +24,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link href="css/fullcalendar.css" rel="stylesheet">
@@ -38,7 +38,7 @@
   </head>
 
   <body>
-
+    
     <header>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container navcontainer">
@@ -47,53 +47,30 @@
                 </div>
 
                 <div class="navbar-right">
-                    <a href="calendar.php" class="btn btn-default pull-right add_btn">Back to Events</a>
+                    <a href="add_event.php" class="btn btn-default pull-right add_btn">Add Event</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container">
-		 
-      <div class="clearfix"></div>
+    <div class="container">      
+       
+        <div class="clearfix"></div>
         
-      <div class="box">
-      
-        <div class="header"><h4>Event</h4></div>
-        
-        <div class="content"> 
-            
-            <table class="table table-bordered m0 b0">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><?php echo $info['id']; ?></td>
-                  <td><?php echo $info['title']; ?></td>
-                  <td><?php echo $info['description']; ?></td>
-                  <td><?php echo date('m-d-Y H:i', strtotime($info['start'])); ?></td>
-                  <td><?php echo date('m-d-Y H:i', strtotime($info['end'])); ?></td>
-                  <td><?php echo $info['color']; ?></td>
-                </tr>
-              </tbody>
-            </table>
-             
+        <div class="box">
+            <div class="header"><h4>C</h4></div>
+            <div class="content"> 
+                <div id="calendar"></div>
+            </div> 
         </div>
-        
-    </div>
-            
-    <button type="submit" onclick="calendar.remove(<?php echo $info['id']; ?>)" class="btn btn-danger pull-right">Delete This Event</button>
-    <a href="edit_event.php?page=<?php echo $info['id']; ?>" class="btn btn-info pull-right mr-10">Edit This Event</a>
-
-    <div class="clearfix"></div>
+    
+        <?php 
+    		if(isset($_GET['page'])) 
+    		{
+    			header('location: view.php?page='.$_GET['page']);
+    			exit();
+    	   	} 
+       	?>
 
     </div> <!-- /container -->
 
@@ -113,10 +90,14 @@
     <script src="lib/validation/jquery.validationEngine.js"></script>
     <script src="lib/validation/jquery.validationEngine-en.js"></script>
     <script src="js/custom.js"></script>
-	
-    <script type="text/javascript">
-		$().FullCalendarExt({ version: 'php' });
-	</script>
     
+    <script type="text/javascript">
+		$().FullCalendarExt({ 
+            version: 'php',
+            calendarSelector: '#calendar',
+            defaultColor:'#00c2ff'
+        });
+	</script>
+
   </body>
 </html>

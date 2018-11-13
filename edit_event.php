@@ -1,14 +1,18 @@
 <?php 
 
-// Include the calendar class
-include('includes/loader.php'); 
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("Location: index.php");
+        die();
+    }
 
-// Retrieve Current Page Data
-$info = $calendar->retrieve($_GET['page']);
+    include('includes/loader.php'); 
 
-// echo '<pre>';
-// print_r($info);
-// echo '</pre>';
+    $info = $calendar->retrieve($_GET['page']);
+
+    // echo '<pre>';
+    // print_r($info);
+    // echo '</pre>';
 
 ?>
 
@@ -45,7 +49,7 @@ $info = $calendar->retrieve($_GET['page']);
                 </div>
 
                 <div class="navbar-right">
-                    <a href="index.php" class="btn btn-default pull-right add_btn">View Events</a>
+                    <a href="calendar.php" class="btn btn-default pull-right add_btn">View Events</a>
                 </div>
             </div>
         </nav>

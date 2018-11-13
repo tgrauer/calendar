@@ -39,6 +39,21 @@ form {
   margin-bottom: 0;
 }
 
+.navbar-header.home {
+  float: none;
+  height: 75px;
+}
+
+.navbar-header.home .navbar-brand {
+  font-size: 11px;
+  float: none;
+  line-height: inherit;
+}
+.navbar-header.home .navbar-brand img {
+  margin: 0 auto;
+  bottom: 12px;
+}
+
 .form-control {
   margin-bottom: 15px;
 }
@@ -248,4 +263,45 @@ a.fc-event:hover {
 
 #ui-datepicker-div {
   z-index: 9999 !important;
+}
+
+.form-holder {
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #eee;
+  margin-top: 17%;
+}
+.form-holder h4 {
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  background: #203047;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.form-holder form {
+  padding: 20px;
+}
+.form-holder form input {
+  background: #fff;
+}
+.form-holder .input-group-addon:last-child {
+  background: #fff;
+}
+.form-holder .btn {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  display: block;
+  min-width: 170px;
+}
+.form-holder div.alert {
+  text-align: center;
+  font-weight: 600;
 }

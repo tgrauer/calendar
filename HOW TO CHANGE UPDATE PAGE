@@ -2,6 +2,6 @@
 HOW TO CHANGE UPDATE PAGE
 
 edit_event.php calendar.update() -> 
-jquery.calendar.js calendar.update(216, 322, 443) -> 
-cal_update.php update()-> 
+jquery.calendar.js calendar.update( 322, 443) -> 
+cal__edit_update.php update()-> 
 calendar.php ->update(224)

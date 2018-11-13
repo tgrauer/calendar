@@ -257,23 +257,14 @@
 		* This function updates events to the database
 		* Returns true
 		*/
-		public function updates($id, $title, $description, $url)
+		public function updates($id, $title, $description, $url, $start_date, $end_date, $start_time, $end_time)
 		{			
+
+			$start = $start_date.' '.$start_time;
+			$end = $end_date.' '.$end_time;
+
 			// The update query
-			$query = sprintf('UPDATE %s 
-									SET 
-										title = "%s",
-										description = "%s",
-										url = "%s"
-									WHERE
-										id = %s
-						',
-										mysqli_real_escape_string($this->connection, $this->table),
-										mysqli_real_escape_string($this->connection, htmlentities($title)),
-										mysqli_real_escape_string($this->connection, htmlentities($description)),
-										mysqli_real_escape_string($this->connection, htmlentities($url)),
-										mysqli_real_escape_string($this->connection, $id)
-						);
+			$query = "UPDATE calendar SET title = '$title', description = '$description', url='$url', start = '$start', end = '$end' WHERE id = '$id'";
 			
 			// The result
 			return $this->result = mysqli_query($this->connection, $query);

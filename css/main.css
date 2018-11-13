@@ -39,10 +39,6 @@ form {
   margin-bottom: 0;
 }
 
-form#add_event .form-control {
-  margin-bottom: 15px !important;
-}
-
 .form-control {
   margin-bottom: 15px;
 }
@@ -248,4 +244,8 @@ a.fc-event:hover {
 }
 .form-group textarea {
   background: #f3f3f3;
+}
+
+#ui-datepicker-div {
+  z-index: 9999 !important;
 }

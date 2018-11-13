@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <!-- styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link href="css/fullcalendar.css" rel="stylesheet">
@@ -69,14 +69,24 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Start Date:</label>
-                            <input type="text" name="start_date" class="validate[required] form-control input-sm" id="datepicker" autocomplete="off">
+                            <div class="input-group">
+                                <input type="text" name="start_date" class="validate[required] form-control input-sm datepicker"  autocomplete="off">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Start Time:</label>
-                            <input type="text" class="form-control input-sm" name="start_time" placeholder="HH:MM:SS" id="tp1">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-s timepicker" name="start_time" placeholder="HH:MM:SS" id="tp1">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-time"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,14 +95,24 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>End Date:</label>
-                            <input type="text" class="form-control input-sm" name="end_date" id="datepicker2"autocomplete="off">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm datepicker" name="end_date"  autocomplete="off">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>End Time:</label>
-                            <input type="text" class="form-control input-sm" name="end_time" placeholder="HH:MM:SS" id="tp2">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" name="end_time" placeholder="HH:MM:SS" id="tp2">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-time"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,8 +155,11 @@
     <!-- javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/fullcalendar.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/jquery.calendar.js"></script>

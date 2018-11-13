@@ -67,7 +67,7 @@ form {
 }
 
 form#add_event .form-control {
-	margin-bottom: 15px!important;	
+	// margin-bottom: 15px!important;	
 }
 
 .form-control {
@@ -245,6 +245,10 @@ a.fc-event:hover{color: #eee;background: #444 !important;border: 1px solid #000 
 	textarea{
 		background: lighten(#eee,2%);
 	}
+}
+
+#ui-datepicker-div{
+	z-index: 9999 !important;
 }
 
 @media handheld, only screen and (max-width: 1200px) { }

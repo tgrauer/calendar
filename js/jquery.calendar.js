@@ -207,16 +207,17 @@
 				
 				// After all step above save
 			    // Update button
-				$(".modal-footer").delegate('[data-option="save"]', 'click', function(e) 
-				{	
-					var event_title_e = $("form#event_title_e").serializeArray(); 
-					var event_description_e = $("form#event_description_e").serializeArray();
-					var event_url = $("form#event_description_e").serializeArray();
+				// $(".modal-footer").delegate('[data-option="save"]', 'click', function(e) 
+				// {	
+				// 	var event_title_e = $("form#event_title_e").serializeArray(); 
+				// 	var event_description_e = $("form#event_description_e").serializeArray();
+				// 	var event_url = $("form#event_description_e").serializeArray();
+				// 	// var start_date = $("form#event_description_e").serializeArray();
 					
-					calendar.update(calendar.id, event_title_e[1], event_description_e, event_url);
+				// 	calendar.update(calendar.id, event_title_e[1], event_description_e, event_url);
 					
-					e.preventDefault();
-				});
+				// 	e.preventDefault();
+				// });
 					
 				// Delete button
 				$(".modal-footer").delegate('[data-option="remove"]', 'click', function(e) 
@@ -442,6 +443,7 @@
 				
 				calendar.update = function(id)
 				{
+
 					var construct = $(opt.formEditEventSelector).serialize()+"&id="+id;
 				
 					$(opt.formEditEventSelector).on('submit', function(e) 
